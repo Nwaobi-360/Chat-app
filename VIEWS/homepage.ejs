@@ -17,15 +17,8 @@
 
 <ul style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 20px; color: green; margin-left: 20px;" id="messages"></ul>
     <!-- //create an h1 tag -->
-    <h1 style="color: lightgray;font: size 25px;"></h1>
-
-    
-
-
-
-   
+    <h1 style="color: lightgray;font: size 25px;"></h1>   
    <h2></h2>
-
     <script>
         //request a nmae
 const userName = prompt('What is your name');
@@ -33,19 +26,21 @@ const userName = prompt('What is your name');
 console.log(userName)
 document['querySelector'] ('h1')['innerHTML'] =`Hello ${userName} welcome to my chat application.` 
 const socket = io ('http://nwaobichatapp.onrender.com/')
-    socket['on'] ('message', (data) => {
+    socket['on']('message', (data) => {
 document['querySelector'] ('h2')['innerHTML'] = data
     
 })
 //<!- socket['on'] ('connection') -->
 
  const chatFunc = () => {
-    const messageToBeSent = document['querySelector'] ('.sendme').value
+    const messageToBeSent = document['querySelector']('.sendme').value
      //console['log'](messageToBeSent)//
-    socket['emit'] ('message', 'Message from '+userName+ ':  ' +messageToBeSent)
+    socket['emit']('message', 'Message from '+userName+ ':  ' +messageToBeSent)
   
 }
     </script> 
+</body>
+</html>
     
  
 

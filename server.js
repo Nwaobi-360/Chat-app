@@ -15,7 +15,7 @@ const socket = io (server)
 app['set'] ('view engine', 'ejs')
 //setting an endpoint
 app['get'] ('/', (req, res) => {
-    res['render'] ('homepage')   
+    res['render']('homepage')   
 })
 //deciding what the app will do  
 socket['on'] ('connection', (socket) => {
